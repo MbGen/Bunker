@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lobby</title>
+     <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/skull.ico" type="image/x-icon">
+    <!--FONTS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet"> 
+</head>
+<body onload="startSever()">
+    <div class="Wrapper">
+        <h2 class="IntroduceText">Your lobby</h2>
+        <label id="DebugLabel" for="DebugArea">Debug Log:</label>
+        <textarea id="DebugArea" name="debug" rows="5" cols="80" readonly></textarea>
+    </div>
+    <script>
+        async function startSever() {
+            eel.start_server();
+        }
+
+        eel.expose(writeLog);
+        function writeLog(message) {
+            document.getElementById("DebugArea").value += message + "\n";
+        }
+    </script>
+</body>
+</html>

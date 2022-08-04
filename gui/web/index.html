@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bunker</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="shortcut icon" href="img/skull.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <!--FONTS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="Wrapper">
+        <h2 class="IntroduceText">Choose option</h2>
+        <div class="MainButtons">
+            <button class="button-48" role="button" onclick="createLobby()">
+                <span class="text">Create</span>
+            </button>
+            <button class="button-48" role="button" onclick="joinLobby()">
+                <span class="text">Join</span>
+            </button>
+            <button class="button-48" role="button">
+                <span class="text">Info</span>
+            </button>
+        </div> 
+    </div> 
+
+    <script>
+        async function createLobby() {
+            location.href = "createlobby.html";
+        }
+        async function joinLobby() {
+            let ip_with_port = prompt("Write ip to connect example -> 127.0.0.1:00000");
+            eel.connect_server(ip_with_port);
+        }
+        eel.expose(writeAlert);
+        async function writeAlert(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>

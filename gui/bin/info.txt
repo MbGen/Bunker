@@ -1,0 +1,13 @@
+базовая логика:
+имитация создания карточек персонажей для игры бункер
+хранить заготовки в json например:
+
+proffesions.json
+biology.json
+health.json
+hobby.json
+baggage.json
+facts.json
+special_cards.json
+disasters.json
+
