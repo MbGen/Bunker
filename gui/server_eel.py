@@ -14,7 +14,7 @@ def start_server():
 @eel.expose
 def connect_server(ip_with_port: str):
     ip, port = ip_with_port.split(":")
-    client.connect(ip, port)
+    client.connect(ip, int(port))
 
 
 eel.start('index.html', size=(400, 400), mode='edge')

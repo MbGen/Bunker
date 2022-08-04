@@ -40,3 +40,7 @@ def start():
         thread.start()
         eel.writeLog(f"{datetime.now().strftime(time_format)} "
                      f"Active connections {threading.active_count() - 1}/{max_users}")
+
+
+if __name__ == '__main__':
+    start()
