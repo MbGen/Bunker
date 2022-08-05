@@ -17,4 +17,9 @@ def connect_server(ip_with_port: str):
     client.connect(ip, int(port))
 
 
+@eel.expose
+def is_connected() -> bool:
+    return client.connected()
+
+
 eel.start('index.html', size=(400, 400), mode='edge')
