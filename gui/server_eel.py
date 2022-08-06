@@ -19,6 +19,7 @@ def connect_server(ip_with_port: str):
 
 @eel.expose
 def is_connected() -> bool:
+    eel.sleep(1)
     return client.connected()
 
 
