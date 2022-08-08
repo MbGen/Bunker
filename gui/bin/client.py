@@ -3,7 +3,7 @@ import json
 import sys
 from pprint import pprint
 import eel
-
+import time
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 BUFF = 1024
@@ -21,6 +21,8 @@ def connect(ip, port):
             data = client.recv(BUFF)
             player = json.loads(data.decode("utf-8"))
             pprint(player)
+            time.sleep(2)
+            print('im here')
             # if input().lower() == "q":
             #     send(DISCONNECT_MSG)
             #     logger.info("Disconnecting")

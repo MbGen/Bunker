@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Lobby</title>
+    <script type="text/javascript" src="/eel.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/skull.ico" type="image/x-icon">
     <!--FONTS-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet"> 
 </head>
-<body>
+<body onload="startConnection()">
     <div class="Wrapper">
         <h2 class="IntroduceText">You are in lobby</h2>
             <div class="PlayerStats">
@@ -25,5 +26,11 @@
                <p><img src="img/man.jpg" alt="avatar"></p>
             </div>
     </div>
+    <script>
+        function startConnection() {
+            let ip_with_port = prompt("Write ip to connect example -> 127.0.0.1:00000");
+            eel.connect_server(ip_with_port);
+        }
+    </script>
 </body>
 </html>
