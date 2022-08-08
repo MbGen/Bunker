@@ -7,16 +7,16 @@
     <link rel="shortcut icon" href="img/skull.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <!--FONTS-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="Wrapper">
         <h2 class="IntroduceText">Choose option</h2>
         <div class="MainButtons">
-            <button class="button-48" role="button" onclick="createLobby()">
+            <button class="button-48" role="button" onclick="createLobby()" type="reset">
                 <span class="text">Create</span>
             </button>
-            <button class="button-48" role="button" onclick="joinLobby()">
+            <button class="button-48" role="button" onclick="joinLobby()" type="reset">
                 <span class="text">Join</span>
             </button>
             <button class="button-48" role="button">
@@ -32,9 +32,7 @@
         function joinLobby() {
             let ip_with_port = prompt("Write ip to connect example -> 127.0.0.1:00000");
             eel.connect_server(ip_with_port);
-            if (eel.is_connected()()) {
-               location.href = "joinlobby.html";
-            }
+            location.href = "joinlobby.html";
         }
         eel.expose(writeAlert);
         function writeAlert(message) {
