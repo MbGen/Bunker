@@ -31,6 +31,13 @@
             let ip_with_port = prompt("Write ip to connect example -> 127.0.0.1:00000");
             eel.connect_server(ip_with_port);
         }
+
+        eel.expose(showPlayer);
+        function showPlayer(player) {
+            console.log(player);
+            console.log("\n");
+            console.log(player.profession);
+        }
     </script>
 </body>
 </html>
