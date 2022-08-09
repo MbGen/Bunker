@@ -30,4 +30,4 @@ def start_game():
     server.send_game_data_to_all()
 
 
-eel.start('index.html', size=(400, 400), mode='edge')
+eel.start('index.html', size=(400, 400), mode='default')
