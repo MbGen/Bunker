@@ -1,9 +1,10 @@
+from operator import concat
 import socket
 import threading
 import eel
 from datetime import datetime
 from loguru import logger
-from main import Player, Random
+from .main import Player, Random
 
 
 FORMAT = "utf-8"
@@ -48,14 +49,8 @@ def start():
 
 def send_game_data_to_all():
     for connection in list_of_all_connections:
-        if is_connected(connection):
+        try:
             connection.send(Player(**Random().generate()).json().encode("utf-8"))
-
-
-def is_connected(conn: socket.socket) -> bool:
-    try:
-        conn.sendall(b"ping")
-        return True
-    except Exception as e:
-        logger.error(e)
-        return False
+        except Exception as e:
+            logger.error(e)
+            continue
