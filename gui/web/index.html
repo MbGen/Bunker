@@ -19,7 +19,7 @@
             <button class="button-48" role="button" onclick="joinLobby()" type="button">
                 <span class="text">Join</span>
             </button>
-            <button class="button-48" role="button">
+            <button class="button-48" role="button" onclick="getInfo()" type="button">
                 <span class="text">Info</span>
             </button>
         </div> 
@@ -32,6 +32,11 @@
         function joinLobby() {
             location.href = "joinlobby.html";
         }
+
+        function getInfo() {
+            eel.info();
+        }
+
         eel.expose(writeAlert);
         function writeAlert(message) {
             alert(message);

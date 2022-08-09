@@ -22,14 +22,14 @@
         function startSever() {
             eel.start_server();
         }
+        
+        function startGame() {
+            eel.start_game();
+        }
 
         eel.expose(writeLog);
         function writeLog(message) {
             document.getElementById("DebugArea").value += message + "\n";
-        }
-
-        function startGame() {
-            eel.start_game();
         }
     </script>
 </body>
