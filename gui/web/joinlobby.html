@@ -34,9 +34,13 @@
 
         eel.expose(showPlayer);
         function showPlayer(player) {
-            console.log(player);
-            console.log("\n");
-            console.log(player.profession);
+            document.getElementById("ProfessionText").innerHTML = "Profession: " + player.profession;
+            document.getElementById("BiologyText").innerHTML = "Biology: " + player.biology;
+            document.getElementById("HealthText").innerHTML = "Health: " + player.Health;
+            document.getElementById("HobbyText").innerHTML = "Hobby: " + player.Hobby;
+            document.getElementById("BaggageText").innerHTML = "Baggage: " + player.Baggage;
+            document.getElementById("FactsText").innerHTML = "Facts: " + player.Facts;
+            document.getElementById("SpecialCardsText").innerHTML = "Special cards: " + player.special_cards; 
         }
     </script>
 </body>

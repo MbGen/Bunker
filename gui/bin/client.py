@@ -19,7 +19,6 @@ def connect(ip, port):
         while True:
             data = client.recv(BUFF)
             player = json.loads(data.decode("utf-8"))
-            player = Player(**player) 
             eel.showPlayer(player)
     except ConnectionRefusedError:
         eel.writeAlert("Unable to connect")
