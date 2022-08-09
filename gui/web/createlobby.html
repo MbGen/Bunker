@@ -14,6 +14,9 @@
         <h2 class="IntroduceText">Your lobby</h2>
         <label id="DebugLabel" for="DebugArea">Debug Log:</label>
         <textarea id="DebugArea" name="debug" rows="5" cols="80" readonly></textarea>
+        <div class="start">
+            <a onclick="startGame()" class="startButton">Start Game</a>
+        </div>
     </div>
     <script>
         function startSever() {
@@ -23,6 +26,10 @@
         eel.expose(writeLog);
         function writeLog(message) {
             document.getElementById("DebugArea").value += message + "\n";
+        }
+
+        function startGame() {
+            eel.start_game();
         }
     </script>
 </body>

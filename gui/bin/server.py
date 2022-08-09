@@ -2,6 +2,8 @@ import socket
 import threading
 import eel
 from datetime import datetime
+from loguru import logger
+from main import Player, Random
 
 
 FORMAT = "utf-8"
@@ -14,10 +16,12 @@ max_users = 1
 DISCONNECT_MSG = "!DISCONNECT"
 time_format = "%Y-%m-%d %H:%M:%S"
 
+list_of_all_connections = []
+
 
 def handle_client(conn: socket.socket, addr):
     eel.writeLog(f"{datetime.now().strftime(time_format)} User {addr} connected")
-    # conn.send(Player(**Random().generate()).json().encode("utf-8"))
+    list_of_all_connections.append(conn)
     connected = True
     while connected:
         try:
@@ -42,5 +46,16 @@ def start():
                      f"Active connections {threading.active_count() - 1}/{max_users}")
 
 
-if __name__ == '__main__':
-    start()
+def send_game_data_to_all():
+    for connection in list_of_all_connections:
+        if is_connected(connection):
+            connection.send(Player(**Random().generate()).json().encode("utf-8"))
+
+
+def is_connected(conn: socket.socket) -> bool:
+    try:
+        conn.sendall(b"ping")
+        return True
+    except Exception as e:
+        logger.error(e)
+        return False

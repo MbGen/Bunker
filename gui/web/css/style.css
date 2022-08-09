@@ -5,9 +5,6 @@ body {
 .Wrapper {
   width: 100%;
   height: 500px;
-  border-color: red;
-  border-style: dashed;
-  border-radius: 15px;
 }
 
 #DebugLabel {
@@ -43,9 +40,6 @@ body {
   margin: auto;
   width: 60%;
   height: 80%;
-  border-color: red;
-  border-style: dashed;
-  border-radius: 15px;
 }
 
 .button-48 {
@@ -108,8 +102,6 @@ body {
   position: relative;
 }
 
-
-
 .PlayerStats {
   vertical-align: top;
   display: inline-block;
@@ -140,5 +132,34 @@ body {
 
 .PlayerAvatar p {
   padding-top: 10%;
+  text-align: center;
+}
+
+.startButton {
+	box-shadow: 0px 15px 0px 0px #d13434;
+	background-color:#d11f2e;
+	border-radius:22px;
+	border:3px solid #8c4545;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: 'Mouse Memoirs', sans-serif;
+	font-size: 20px;
+	padding: 22px 37px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2f6627;
+}
+.startButton:hover {
+	background-color:#e80e1c;
+}
+.startButton:active {
+	position:relative;
+	top:1px;
+}
+
+.start {
+  padding-top: 5%;
+  width: 40%;
+  margin: auto;
   text-align: center;
 }
