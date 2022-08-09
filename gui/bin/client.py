@@ -26,6 +26,7 @@ def connect(ip, port):
             #     logger.info("Disconnecting")
             #     client.close()
             #     sys.exit()
+
     except ConnectionRefusedError:
         eel.writeAlert("Unable to connect")
         return
