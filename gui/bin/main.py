@@ -1,8 +1,11 @@
 import re
+import os
 
 from pydantic import BaseModel
 from random import choice, randint
 from json import load
+
+current_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 class Random:
@@ -19,7 +22,7 @@ class Random:
 
     def generate(self) -> dict:
         for filename in self.filenames.keys():
-            with open(filename, "r", encoding="utf-8") as file:
+            with open(os.path.join(current_dir, filename), "r", encoding="utf-8") as file:
                 objects = dict(load(file))
                 value = choice(objects[self.filenames[filename]])
                 value = re.sub(r"AGE", str(randint(18, 90)), value)
