@@ -106,9 +106,6 @@ body {
   vertical-align: top;
   display: inline-block;
   margin-left: 15%;
-  border-radius: 5px;
-  border-color: red;
-  border-style: dashed;
   width: 40%;
   height: 80%;
 }
@@ -123,9 +120,6 @@ body {
 .PlayerAvatar {
   vertical-align: top;
   display: inline-block;
-  border-radius: 5px;
-  border-style: dotted;
-  border-color: red;
   width: 30%;
   height: 80%; 
 }
