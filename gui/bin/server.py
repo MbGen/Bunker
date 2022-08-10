@@ -50,7 +50,7 @@ def start():
 def send_game_data_to_all():
     for connection in list_of_all_connections:
         try:
-            connection.send(Player(**Random().generate()).json().encode("utf-8"))
+            connection.send(Player(**Random().generate_player_stats()).json().encode("utf-8"))
         except Exception as e:
             logger.error(e)
             continue

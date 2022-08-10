@@ -157,3 +157,13 @@ body {
   margin: auto;
   text-align: center;
 }
+
+.Disaster {
+  padding-left: 15%;
+}
+
+#DisasterText {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+}

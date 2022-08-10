@@ -17,10 +17,11 @@ class Random:
         "hobby.json": "hobby",
         "baggage.json": "baggage",
         "facts.json": "facts",
-        "special_cards.json": "special_cards"
+        "special_cards.json": "special_cards",
+        "disasters.json": "disaster"
     }
 
-    def generate(self) -> dict:
+    def generate_player_stats(self) -> dict:
         for filename in self.filenames.keys():
             with open(os.path.join(current_dir, filename), "r", encoding="utf-8") as file:
                 objects = dict(load(file))
@@ -42,3 +43,8 @@ class Player(BaseModel):
     baggage: str
     facts: str
     special_cards: str
+    disaster: str
+
+
+if __name__ == '__main__':
+    print(Player(**Random().generate_player_stats()))

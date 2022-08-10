@@ -12,19 +12,23 @@
 <body onload="startConnection()">
     <div class="Wrapper">
         <h2 class="IntroduceText">You are in lobby</h2>
-            <div class="PlayerStats">
-                <p id="ProfessionText">Profession:</p>
-                <p id="BiologyText">Biology:</p>
-                <p id="HealthText">Health:</p>
-                <p id="HobbyText">Hobby:</p>
-                <p id="BaggageText">Baggage:</p>
-                <p id="FactsText">Facts:</p>
-                <p id="SpecialCardsText">Special cards:</p>
-            </div>
+        <div class="PlayerStats">
+            <p id="ProfessionText">Profession:</p>
+            <p id="BiologyText">Biology:</p>
+            <p id="HealthText">Health:</p>
+            <p id="HobbyText">Hobby:</p>
+            <p id="BaggageText">Baggage:</p>
+            <p id="FactsText">Facts:</p>
+            <p id="SpecialCardsText">Special cards:</p>
+        </div>
 
-            <div class="PlayerAvatar">
-               <p><img src="img/man.jpg" alt="avatar"></p>
-            </div>
+        <div class="PlayerAvatar">
+            <p><img src="img/man.jpg" alt="avatar"></p>
+        </div>
+        
+        <div class="Disaster">
+            <p id="DisasterText">Disaster:</p>
+        </div>
     </div>
     <script>
         function startConnection() {
@@ -41,6 +45,7 @@
             document.getElementById("BaggageText").innerHTML = "Baggage: " + player.baggage;
             document.getElementById("FactsText").innerHTML = "Facts: " + player.facts;
             document.getElementById("SpecialCardsText").innerHTML = "Special cards: " + player.special_cards; 
+            document.getElementById("DisasterText").innerHTML = "Disaster: " + player.disaster;
         }
     </script>
 </body>
