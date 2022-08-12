@@ -12,7 +12,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip = socket.gethostbyname_ex(socket.gethostname())[-1][-1]
 port = 32112
 server.bind((ip, port))
-BUFF = 1024
+BUFF = 4096
 max_users = 1
 DISCONNECT_MSG = "!DISCONNECT"
 time_format = "%Y-%m-%d %H:%M:%S"

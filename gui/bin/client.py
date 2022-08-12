@@ -7,7 +7,7 @@ from .main import Player
 
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-BUFF = 1024
+BUFF = 4096
 DISCONNECT_MSG = "!DISCONNECT"
 
 
@@ -15,7 +15,6 @@ def connect(ip, port):
     try:
         client.connect((ip, port))
         eel.writeAlert(f"You are connected to {ip}")
-        is_connected = True
         while True:
             data = client.recv(BUFF)
             player = json.loads(data.decode("utf-8"))
