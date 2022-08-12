@@ -21,13 +21,20 @@ def start_server():
 @eel.expose
 def connect_server(ip_with_port: str):
     ip, port = ip_with_port.split(":")
-    client.connect(ip, int(port))
+    thread = threading.Thread(target=client.connect, args=(ip, int(port)))
+    thread.start()
 
 
 @eel.expose
 def start_game():
     print("start sending")
     server.send_game_data_to_all()
+
+
+@eel.expose
+def is_connetced() -> bool:
+    eel.sleep(1)
+    return client.is_connected()
 
 
 eel.start('index.html', size=(400, 400), mode='default')

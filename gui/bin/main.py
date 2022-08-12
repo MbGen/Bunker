@@ -44,7 +44,3 @@ class Player(BaseModel):
     facts: str
     special_cards: str
     disaster: str
-
-
-if __name__ == '__main__':
-    print(Player(**Random().generate_player_stats()))
