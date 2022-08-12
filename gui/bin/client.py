@@ -2,9 +2,6 @@ import socket
 import json
 from pprint import pprint
 import eel
-import time
-
-from gui.server_eel import is_connetced
 from .main import Player
 
 
