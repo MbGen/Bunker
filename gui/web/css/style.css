@@ -69,7 +69,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  vertical-align: baseline;
   white-space: nowrap;
 }
 
