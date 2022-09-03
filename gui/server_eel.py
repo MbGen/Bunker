@@ -20,7 +20,11 @@ def start_server():
 
 @eel.expose
 def connect_server(ip_with_port: str):
-    ip, port = ip_with_port.split(":")
+    try:
+        ip, port = ip_with_port.split(":")
+    except AttributeError:
+        eel.writeAlert("Не удалось подключиться")
+        return
     thread = threading.Thread(target=client.connect, args=(ip, int(port)))
     thread.start()
 
