@@ -34,7 +34,7 @@ def start_game():
 @eel.expose
 def is_connected() -> bool:
     eel.sleep(1)
-    return client.is_connected()
+    return client.is_connected
 
 
 eel.start('index.html', size=(400, 400), mode='default')

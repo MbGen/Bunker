@@ -34,9 +34,3 @@ def connect(ip, port):
 def send(msg: str):
     message = msg.encode("utf-8")
     client.send(message)
-
-
-def is_connected() -> bool:
-    "returns: status of current connection"
-    global is_connected
-    return is_connected
