@@ -8,7 +8,7 @@ from .main import Player
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 BUFF = 4096
 DISCONNECT_MSG = "!DISCONNECT"
-is_connetced = False
+is_connected = False
 
 
 def connect(ip, port):

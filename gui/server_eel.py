@@ -1,6 +1,6 @@
 import eel
 from datetime import datetime
-from bin import server, client
+from src import server, client
 import threading
 
 
